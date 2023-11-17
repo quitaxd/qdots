@@ -37,6 +37,11 @@ if [ -n "$1" ] || [ "$1" = "" ]; then
 	echo "qdots readme = open dots readme with $EDITOR."
 fi
 
+if [ "$1" = "update" ]; then
+	rm ~/.local/bin/qdots
+	curl https://raw.githubusercontent.com/Quitaxd/qdots/main/bin/qdots -o qdots
+fi
+
 if [ "$?" = "0" ]; then
 	echo
 else
