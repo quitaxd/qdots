@@ -4,7 +4,7 @@
 echo "What is your config directory? [$HOME/.config]"
 read confdir
 
-if [ "$confdir" = "" ]; then
+if [ -n "$confdir" ]; then
 	confdir=$HOME/.config
 fi
 

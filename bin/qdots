@@ -22,6 +22,10 @@ if [ "$1" = "push" ]; then
 	git push
 fi
 
+if [ "$1" = "readme" ]; then
+	$EDITOR ~/.dots/README.md
+fi
+
 if [ "$?" = "0" ]; then
 	echo "OK."
 else
