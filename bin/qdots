@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+dotdir="$HOME/.dots"
+confdir="$HOME/.config"
+
+if [ "$1" = "add" ]; then
+	mv $confdir/$2 $dotdir
+	ln -s $dotdir/$2 $confdir/$2
+fi
+
+if [ "$1" = "rm" ]; then
+	rm $confdir/$2 -rf
+	mv $dotdir/$2 $confdir
+fi
+
+if [ "$1" = "push" ]; then
+	cd $dotdir
+	git add .
+	echo "Enter your commit message."
+	read commitmsg
+	git commit -m "$commitmsg"
+	git push
+fi
+
+if [ "$?" = "0" ]; then
+	echo "OK."
+else
+	echo "Error."
+	echo "Exit code: $?"
+fi
