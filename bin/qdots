@@ -26,8 +26,19 @@ if [ "$1" = "readme" ]; then
 	$EDITOR ~/.dots/README.md
 fi
 
+if [ -n "$1" ] || [ "$1" = "" ]; then
+	echo "qdots help message."
+	echo
+	echo "NOTE: Example filename: ~/.config/i3 = i3 in filename"
+	echo
+	echo "qdots add <filename> = add a config in $confdir."
+	echo "qdots rm <filename> = remove a config in $dotdir."
+	echo "qdots push = add files, commit and push files in $dotdir."
+	echo "qdots readme = open dots readme with $EDITOR."
+fi
+
 if [ "$?" = "0" ]; then
-	echo "OK."
+	echo
 else
 	echo "Error."
 	echo "Exit code: $?"
