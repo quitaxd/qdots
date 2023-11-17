@@ -39,7 +39,7 @@ fi
 
 if [ "$1" = "update" ]; then
 	rm ~/.local/bin/qdots
-	curl https://raw.githubusercontent.com/Quitaxd/qdots/main/bin/qdots -o qdots
+	curl https://raw.githubusercontent.com/Quitaxd/qdots/main/bin/qdots -o ~/.local/bin/qdots
 fi
 
 if [ "$?" = "0" ]; then
