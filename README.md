@@ -9,3 +9,7 @@ git clone https://github.com/Quitaxd/qdots.git ~/qdots
 cd ~/qdots
 ./setup.sh
 ```
+
+## Usage
+
+Coming soon.
